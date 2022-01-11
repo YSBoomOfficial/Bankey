@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D35BB239278B74740026D6AC /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35BB238278B74740026D6AC /* OnboardingViewController.swift */; };
+		D3856CD2278DF20100204F14 /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3856CD1278DF20100204F14 /* DummyViewController.swift */; };
+		D3856CD5278DF83F00204F14 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3856CD4278DF83F00204F14 /* LocalState.swift */; };
 		D39309BF278B6724009A499A /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39309BE278B6724009A499A /* OnboardingContainerViewController.swift */; };
 		D3A704F027869EDF00531117 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A704EF27869EDF00531117 /* LoginView.swift */; };
 		D3B698C62786996F000E664D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B698C52786996F000E664D /* AppDelegate.swift */; };
@@ -18,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		D35BB238278B74740026D6AC /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		D3856CD1278DF20100204F14 /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
+		D3856CD4278DF83F00204F14 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 		D39309BE278B6724009A499A /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		D3A704EF27869EDF00531117 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D3B698C22786996F000E664D /* Bankey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankey.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D3856CD3278DF83300204F14 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D3856CD4278DF83F00204F14 /* LocalState.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		D39309BD278B66C7009A499A /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +75,7 @@
 			children = (
 				D3A704EF27869EDF00531117 /* LoginView.swift */,
 				D3B698C92786996F000E664D /* LoginViewController.swift */,
+				D3856CD1278DF20100204F14 /* DummyViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -87,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				D3B698C52786996F000E664D /* AppDelegate.swift */,
+				D3856CD3278DF83300204F14 /* Utils */,
 				D3A704EE27869EA400531117 /* Login */,
 				D39309BD278B66C7009A499A /* Onboarding */,
 				D3A704ED27869E3500531117 /* Files */,
@@ -165,6 +179,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3A704F027869EDF00531117 /* LoginView.swift in Sources */,
+				D3856CD5278DF83F00204F14 /* LocalState.swift in Sources */,
+				D3856CD2278DF20100204F14 /* DummyViewController.swift in Sources */,
 				D3B698CA2786996F000E664D /* LoginViewController.swift in Sources */,
 				D35BB239278B74740026D6AC /* OnboardingViewController.swift in Sources */,
 				D3B698C62786996F000E664D /* AppDelegate.swift in Sources */,
@@ -237,7 +253,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -292,7 +308,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -316,7 +332,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -344,7 +360,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class OnboardingViewController: UIViewController {
 	let stackView = UIStackView()
 	let imageView = UIImageView()
@@ -36,7 +35,7 @@ class OnboardingViewController: UIViewController {
 }
 
 extension OnboardingViewController {
-	func style() {
+	private func style() {
 		view.backgroundColor = .systemBackground
 
 		// StackView
@@ -58,7 +57,7 @@ extension OnboardingViewController {
 		label.text = titleText
 	}
 
-	func layout() {
+	private func layout() {
 		stackView.addArrangedSubview(imageView)
 		stackView.addArrangedSubview(label)
 
