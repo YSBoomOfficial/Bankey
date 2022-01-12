@@ -7,6 +7,8 @@
 
 import UIKit
 
+let appColor: UIColor = .systemTeal
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	let loginViewController = LoginViewController()
 	let onboardingContainerViewController = OnboardingContainerViewController()
 	let dummyViewController = DummyViewController()
+	let mainViewController = MainViewController()
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		window = UIWindow(frame: UIScreen.main.bounds)
@@ -25,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		onboardingContainerViewController.delegate = self
 		dummyViewController.delegate = self
 
-		setRootViewController(loginViewController, animated: false)
+		setRootViewController(mainViewController, animated: true)
 		return true
 	}
 }
@@ -41,7 +44,6 @@ extension AppDelegate {
 		window.rootViewController = vc
 		window.makeKeyAndVisible()
 		UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil, completion: nil)
-
 	}
 }
 
