@@ -16,6 +16,12 @@ class AccountSummaryViewController: UIViewController {
 	var header = AccountSummaryHeaderView(frame: .zero)
 	var tableView = UITableView()
 
+	lazy var logoutBarButtonItem: UIBarButtonItem = {
+		let barButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logoutTapped))
+		barButtonItem.tintColor = .label
+		return barButtonItem
+	}()
+
 	var profile: Profile?
 	var accounts = [AccountSummaryCell.ViewModel]()
 
@@ -28,6 +34,7 @@ class AccountSummaryViewController: UIViewController {
 
 extension AccountSummaryViewController {
 	private func setup() {
+		setupNavigationBar()
 		setupTableView()
 		setupTableHeaderView()
 		fetchData()
@@ -63,6 +70,7 @@ extension AccountSummaryViewController {
 
 }
 
+// MARK: - UITableViewDataSource
 extension AccountSummaryViewController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard !accounts.isEmpty else { return UITableViewCell() }
@@ -78,12 +86,14 @@ extension AccountSummaryViewController: UITableViewDataSource {
 	}
 }
 
+// MARK: - UITableViewDelegate
 extension AccountSummaryViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
 	}
 }
 
+// MARK: - Dummy data
 extension AccountSummaryViewController {
 	private func fetchData() {
 		fetchAccounts()
@@ -123,5 +133,15 @@ extension AccountSummaryViewController {
 	private func fetchProfile() {
 		profile = Profile(firstName: "Yash", lastName: "NS_Async_Pain.self")
 	}
+}
 
+// MARK: - NavBar
+extension AccountSummaryViewController {
+	func setupNavigationBar() {
+		navigationItem.rightBarButtonItem = logoutBarButtonItem
+	}
+
+	@objc func logoutTapped(_ sender: UIButton) {
+		NotificationCenter.default.post(name: .logout, object: nil)
+	}
 }
