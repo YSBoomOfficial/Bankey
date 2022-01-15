@@ -36,7 +36,6 @@ class LoginViewController: UIViewController {
 	var titleLeadingAnchor: NSLayoutConstraint?
 	var subtitleLeadingAnchor: NSLayoutConstraint?
 
-
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		style()
@@ -154,10 +153,10 @@ extension LoginViewController {
 			return
 		}
 
-		if username.isEmpty || password.isEmpty {
-			configureView(with: "Username/Password cannot be blank")
-			return
-		}
+//		if username.isEmpty || password.isEmpty {
+//			configureView(with: "Username/Password cannot be blank")
+//			return
+//		}
 
 		if username == "Yash" && password == "Pass" {
 			signInButton.configuration?.showsActivityIndicator = true
@@ -171,6 +170,7 @@ extension LoginViewController {
 	private func configureView(with message: String) {
 		errorMessageLabel.isHidden = false
 		errorMessageLabel.text = message
+		shakeButton()
 	}
 }
 
@@ -198,4 +198,16 @@ extension LoginViewController {
 		}
 		animator3.startAnimation(afterDelay: 0.2)
 	}
+
+	private func shakeButton() {
+		let animation = CAKeyframeAnimation()
+		animation.keyPath = "position.x"
+		animation.values = [0, 20, -20, 10, -10, 5, -5, 0]
+		animation.keyTimes = [0, 0.125, 0.25, 0.375, 0.5, 0.175, 0.625, 1]
+		animation.duration = 0.5
+
+		animation.isAdditive = true
+		signInButton.layer.add(animation, forKey: "shake")
+	}
+
 }
