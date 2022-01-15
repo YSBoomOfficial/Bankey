@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol LogOutDelegate: AnyObject {
+	func didLogout()
+}
+
 class DummyViewController: UIViewController {
 	let stackView = UIStackView()
 	let label = UILabel()
