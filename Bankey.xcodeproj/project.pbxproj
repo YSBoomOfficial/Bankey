@@ -18,6 +18,8 @@
 		D3A606DC2790970100939208 /* Decimal+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A606DB2790970100939208 /* Decimal+Utils.swift */; };
 		D3A606DE2790976200939208 /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A606DD2790976200939208 /* CurrencyFormatter.swift */; };
 		D3A704F027869EDF00531117 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A704EF27869EDF00531117 /* LoginView.swift */; };
+		D3B0847227933DD70018EEB1 /* ShakeyBellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B0847127933DD70018EEB1 /* ShakeyBellView.swift */; };
+		D3B08474279340590018EEB1 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B08473279340590018EEB1 /* UIView+Utils.swift */; };
 		D3B4DE702792064700EA4D80 /* CurrencyFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B4DE6F2792064700EA4D80 /* CurrencyFormatterTests.swift */; };
 		D3B698C62786996F000E664D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B698C52786996F000E664D /* AppDelegate.swift */; };
 		D3B698CA2786996F000E664D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B698C92786996F000E664D /* LoginViewController.swift */; };
@@ -51,6 +53,8 @@
 		D3A606DB2790970100939208 /* Decimal+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+Utils.swift"; sourceTree = "<group>"; };
 		D3A606DD2790976200939208 /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		D3A704EF27869EDF00531117 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		D3B0847127933DD70018EEB1 /* ShakeyBellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeyBellView.swift; sourceTree = "<group>"; };
+		D3B08473279340590018EEB1 /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		D3B4DE6D2792064700EA4D80 /* BankeyUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankeyUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B4DE6F2792064700EA4D80 /* CurrencyFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatterTests.swift; sourceTree = "<group>"; };
 		D3B698C22786996F000E664D /* Bankey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankey.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +106,7 @@
 				D3C36ED727923BE900F1845B /* NSNotificationName.swift */,
 				D3E6F442278F2BA3000376B2 /* UIViewController+Utils.swift */,
 				D3C36ED92792400200F1845B /* UITextField+SecureToggle.swift */,
+				D3B08473279340590018EEB1 /* UIView+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -152,6 +157,14 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		D3B0847027933DB40018EEB1 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D3B0847127933DD70018EEB1 /* ShakeyBellView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		D3B4DE6E2792064700EA4D80 /* BankeyUnitTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +200,7 @@
 				D39309BD278B66C7009A499A /* Onboarding */,
 				D337A1AF278F3E92007405C1 /* Account Summary */,
 				D3856CD3278DF83300204F14 /* Utils */,
+				D3B0847027933DB40018EEB1 /* Components */,
 				D3A704ED27869E3500531117 /* Files */,
 			);
 			path = Bankey;
@@ -311,11 +325,13 @@
 				D3B698CA2786996F000E664D /* LoginViewController.swift in Sources */,
 				D3C36ED827923BE900F1845B /* NSNotificationName.swift in Sources */,
 				D3A606DC2790970100939208 /* Decimal+Utils.swift in Sources */,
+				D3B0847227933DD70018EEB1 /* ShakeyBellView.swift in Sources */,
 				D3A606DA279073E500939208 /* AccountSummaryCell.swift in Sources */,
 				D35BB239278B74740026D6AC /* OnboardingViewController.swift in Sources */,
 				D3E6F445278F2E35000376B2 /* MainViewController.swift in Sources */,
 				D337A1B1278F3EB4007405C1 /* AccountSummaryViewController.swift in Sources */,
 				D3B698C62786996F000E664D /* AppDelegate.swift in Sources */,
+				D3B08474279340590018EEB1 /* UIView+Utils.swift in Sources */,
 				D39309BF278B6724009A499A /* OnboardingContainerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
