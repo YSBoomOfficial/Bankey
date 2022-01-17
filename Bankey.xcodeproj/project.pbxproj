@@ -14,6 +14,8 @@
 		D3856CD2278DF20100204F14 /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3856CD1278DF20100204F14 /* DummyViewController.swift */; };
 		D3856CD5278DF83F00204F14 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3856CD4278DF83F00204F14 /* LocalState.swift */; };
 		D39309BF278B6724009A499A /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39309BE278B6724009A499A /* OnboardingContainerViewController.swift */; };
+		D39B4E6D2795D639006C7FEC /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39B4E6C2795D639006C7FEC /* Date+Utils.swift */; };
+		D39B4E6F2795D71D006C7FEC /* AccountSummaryViewController+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39B4E6E2795D71D006C7FEC /* AccountSummaryViewController+Networking.swift */; };
 		D3A606DA279073E500939208 /* AccountSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A606D9279073E500939208 /* AccountSummaryCell.swift */; };
 		D3A606DC2790970100939208 /* Decimal+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A606DB2790970100939208 /* Decimal+Utils.swift */; };
 		D3A606DE2790976200939208 /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A606DD2790976200939208 /* CurrencyFormatter.swift */; };
@@ -49,6 +51,8 @@
 		D3856CD1278DF20100204F14 /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
 		D3856CD4278DF83F00204F14 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 		D39309BE278B6724009A499A /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
+		D39B4E6C2795D639006C7FEC /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
+		D39B4E6E2795D71D006C7FEC /* AccountSummaryViewController+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSummaryViewController+Networking.swift"; sourceTree = "<group>"; };
 		D3A606D9279073E500939208 /* AccountSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryCell.swift; sourceTree = "<group>"; };
 		D3A606DB2790970100939208 /* Decimal+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+Utils.swift"; sourceTree = "<group>"; };
 		D3A606DD2790976200939208 /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
@@ -91,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				D337A1B0278F3EB4007405C1 /* AccountSummaryViewController.swift */,
+				D39B4E6E2795D71D006C7FEC /* AccountSummaryViewController+Networking.swift */,
 				D3A606D7279073B000939208 /* Header */,
 				D3A606D8279073C700939208 /* Cells */,
 			);
@@ -107,6 +112,7 @@
 				D3E6F442278F2BA3000376B2 /* UIViewController+Utils.swift */,
 				D3C36ED92792400200F1845B /* UITextField+SecureToggle.swift */,
 				D3B08473279340590018EEB1 /* UIView+Utils.swift */,
+				D39B4E6C2795D639006C7FEC /* Date+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -316,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3E6F443278F2BA3000376B2 /* UIViewController+Utils.swift in Sources */,
+				D39B4E6F2795D71D006C7FEC /* AccountSummaryViewController+Networking.swift in Sources */,
 				D3A704F027869EDF00531117 /* LoginView.swift in Sources */,
 				D3856CD5278DF83F00204F14 /* LocalState.swift in Sources */,
 				D32BCFA4278F438D0002D346 /* AccountSummaryHeaderView.swift in Sources */,
@@ -333,6 +340,7 @@
 				D3B698C62786996F000E664D /* AppDelegate.swift in Sources */,
 				D3B08474279340590018EEB1 /* UIView+Utils.swift in Sources */,
 				D39309BF278B6724009A499A /* OnboardingContainerViewController.swift in Sources */,
+				D39B4E6D2795D639006C7FEC /* Date+Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,10 @@
 
 import UIKit
 
+enum AccountType: String, Codable {
+	case Banking, CreditCard, Investment
+}
+
 class AccountSummaryCell: UITableViewCell {
 	static let reuseID = "AccountSummaryCell"
 	static let rowHeight: CGFloat = 112
@@ -146,10 +150,6 @@ extension AccountSummaryCell {
 }
 
 extension AccountSummaryCell {
-	enum AccountType: String {
-		case Banking, CreditCard, Investment
-	}
-
 	struct ViewModel {
 		let accountType: AccountType
 		let accountName: String

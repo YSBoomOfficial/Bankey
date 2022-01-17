@@ -61,6 +61,7 @@ extension ShakeyBellView {
 			imageView.widthAnchor.constraint(equalToConstant: 24)
 		])
 
+		// Badge
 		NSLayoutConstraint.activate([
 			buttonView.topAnchor.constraint(equalTo: imageView.topAnchor),
 			buttonView.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: -9),
