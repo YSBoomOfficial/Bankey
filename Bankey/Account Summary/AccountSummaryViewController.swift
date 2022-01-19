@@ -14,17 +14,30 @@ class AccountSummaryViewController: UIViewController {
 		return barButtonItem
 	}()
 
-	var profile: Profile?
+	lazy var errorAlert: UIAlertController = {
+		let alert =  UIAlertController(title: "", message: "", preferredStyle: .alert)
+		alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+		return alert
+	}()
+
+	var isLoaded = false // for skeleton loaders
+
+	// Header
 	var headerView = AccountSummaryHeaderView(frame: .zero)
 	var headerViewModel = AccountSummaryHeaderView.ViewModel(welcomeMessage: "Hello", name: "Yash", date: Date())
 
+	// TableView and TableViewCells
 	var tableView = UITableView()
 	var accountCellViewModels = [AccountSummaryCell.ViewModel]()
-	var accounts = [Account]()
-
 	let refreshControl = UIRefreshControl()
 
-	var isLoaded = false
+	// Models and managers
+	var profile: Profile?
+	var accounts = [Account]()
+
+	var profileManager: ProfileManageable = ProfileManager()
+	var accountsManager: AccountsManageable = AccountsManager()
+
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -103,40 +116,52 @@ extension AccountSummaryViewController {
 	private func fetchData() {
 		let group = DispatchGroup()
 
+		// Testing - random number selection
+		let userId = Int.random(in: 1..<4)
+
+		fetchProfile(group: group, userId: userId)
+		fetchAccounts(group: group, userId: userId)
+
+		group.notify(queue: .main) {
+			self.reloadView()
+		}
+	}
+
+	private func fetchProfile(group: DispatchGroup, userId: Int) {
 		group.enter()
-		fetchProfile(forUserId: 1) { result in
+		profileManager.fetchProfile(forUserId: userId) { result in
 			switch result {
 				case .success(let profile):
 					self.profile = profile
-					self.configureTableHeaderView(with: profile)
 				case .failure(let error):
-					self.displayError(error: error)
+					self.displayError(error)
 			}
 			group.leave()
 		}
+	}
 
+	private func fetchAccounts(group: DispatchGroup, userId: Int) {
 		group.enter()
-		fetchAccounts(forUserId: "1") { result in
+		accountsManager.fetchAccounts(forUserId: userId) { result in
 			switch result {
 				case .success(let accounts):
 					self.accounts = accounts
-					self.configureTableCells(with: accounts)
 				case .failure(let error):
-					self.displayError(error: error)
+					self.displayError(error)
 			}
 			group.leave()
 		}
+	}
 
-		group.notify(queue: .main) {
-			self.tableView.refreshControl?.endRefreshing()
+	private func reloadView() {
+		self.tableView.refreshControl?.endRefreshing()
 
-			guard let profile = self.profile else { return }
+		guard let profile = self.profile else { return }
 
-			self.isLoaded = true
-			self.configureTableHeaderView(with: profile)
-			self.configureTableCells(with: self.accounts)
-			self.tableView.reloadData()
-		}
+		self.isLoaded = true
+		self.configureTableHeaderView(with: profile)
+		self.configureTableCells(with: self.accounts)
+		self.tableView.reloadData()
 	}
 
 	private func configureTableHeaderView(with profile: Profile) {
@@ -149,28 +174,34 @@ extension AccountSummaryViewController {
 			AccountSummaryCell.ViewModel(accountType: $0.type, accountName: $0.name, balance: $0.amount)
 		}
 	}
+}
 
-	private func displayError(error: NetworkError) {
+// MARK: - Error Alert
+extension AccountSummaryViewController {
+	private func displayError(_ error: NetworkError) {
+		let titleAndMessage = titleAndMessage(for: error)
+		showErrorAlert(with: titleAndMessage.0, message: titleAndMessage.1)
+	}
+
+	private func titleAndMessage(for error: NetworkError) -> (String, String) {
 		let title: String
 		let message: String
 		switch error {
 			case .serverError:
 				title = "Server Error"
-				message = "Could not fetch data. Ensure you are connected to the internet. \(error.localizedDescription). Please try again later."
+				message = "Could not fetch data. Ensure you are connected to the internet. Please try again later."
 			case .decodingError:
 				title = "Decoding Error"
-				message = "Could not process your request. \(error.localizedDescription). Please try again later."
+				message = "Could not process your request. Please try again later."
 		}
-		showErrorAlert(with: title, message: message)
+		return (title, message)
 	}
 
 	private func showErrorAlert(with title: String, message: String) {
-		let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-
-		alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-		present(alert, animated: true, completion: nil)
+		errorAlert.title = title
+		errorAlert.message = message
+		present(errorAlert, animated: true, completion: nil)
 	}
-
 }
 
 // MARK: - Pull-to-Refresh + Skeleton Loader
@@ -198,5 +229,20 @@ extension AccountSummaryViewController {
 		let row = Account.makeSkeleton()
 		accounts = Array(repeating: row, count: 10)
 		configureTableCells(with: accounts)
+	}
+}
+
+// MARK: - Unit Testing helpers
+extension AccountSummaryViewController {
+	func titleAndMessageForTesting(for error: NetworkError) -> (String, String) {
+		titleAndMessage(for: error)
+	}
+
+	func forceFetchProfile() {
+		fetchProfile(group: DispatchGroup(), userId: 1)
+	}
+
+	func forceFetchAccounts() {
+		fetchAccounts(group: DispatchGroup(), userId: 1)
 	}
 }
