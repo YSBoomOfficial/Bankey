@@ -110,7 +110,7 @@ extension AccountSummaryViewController {
 					self.profile = profile
 					self.configureTableHeaderView(with: profile)
 				case .failure(let error):
-					print(error.localizedDescription)
+					self.displayError(error: error)
 			}
 			group.leave()
 		}
@@ -122,20 +122,20 @@ extension AccountSummaryViewController {
 					self.accounts = accounts
 					self.configureTableCells(with: accounts)
 				case .failure(let error):
-					print(error.localizedDescription)
+					self.displayError(error: error)
 			}
 			group.leave()
 		}
 
-		group.notify(queue: .main) { [weak self] in
-			self?.tableView.refreshControl?.endRefreshing()
+		group.notify(queue: .main) {
+			self.tableView.refreshControl?.endRefreshing()
 
-			guard let profile = self?.profile else { return }
+			guard let profile = self.profile else { return }
 
-			self?.isLoaded = true
-			self?.configureTableHeaderView(with: profile)
-			self?.configureTableCells(with: self?.accounts ?? [])
-			self?.tableView.reloadData()
+			self.isLoaded = true
+			self.configureTableHeaderView(with: profile)
+			self.configureTableCells(with: self.accounts)
+			self.tableView.reloadData()
 		}
 	}
 
@@ -149,6 +149,28 @@ extension AccountSummaryViewController {
 			AccountSummaryCell.ViewModel(accountType: $0.type, accountName: $0.name, balance: $0.amount)
 		}
 	}
+
+	private func displayError(error: NetworkError) {
+		let title: String
+		let message: String
+		switch error {
+			case .serverError:
+				title = "Server Error"
+				message = "Could not fetch data. Ensure you are connected to the internet. \(error.localizedDescription). Please try again later."
+			case .decodingError:
+				title = "Decoding Error"
+				message = "Could not process your request. \(error.localizedDescription). Please try again later."
+		}
+		showErrorAlert(with: title, message: message)
+	}
+
+	private func showErrorAlert(with title: String, message: String) {
+		let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+
+		alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+		present(alert, animated: true, completion: nil)
+	}
+
 }
 
 // MARK: - Pull-to-Refresh + Skeleton Loader

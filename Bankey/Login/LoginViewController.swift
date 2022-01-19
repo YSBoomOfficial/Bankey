@@ -160,10 +160,9 @@ extension LoginViewController {
 
 		if username == "Yash" && password == "Pass" {
 			signInButton.configuration?.showsActivityIndicator = true
-
-			DispatchQueue.main.asyncAfter(deadline: .now()+1) { [weak self] in
-				self?.delegate?.didLogin()
-			}
+			delegate?.didLogin()
+			loginView.usernameTextField.text = ""
+			loginView.passwordTextField.text = ""
 		} else {
 			configureView(with: "Incorrect Username/Password")
 			return
