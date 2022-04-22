@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D36D6965281287D500FFEF91 /* PasswordCriteriaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36D6964281287D500FFEF91 /* PasswordCriteriaView.swift */; };
+		D36D6967281292A000FFEF91 /* PasswordStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36D6966281292A000FFEF91 /* PasswordStatusView.swift */; };
 		D3A221CB27DC1FEE000E5A60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A221CA27DC1FEE000E5A60 /* AppDelegate.swift */; };
 		D3A221CF27DC1FEE000E5A60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A221CE27DC1FEE000E5A60 /* ViewController.swift */; };
 		D3A221D427DC1FEF000E5A60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3A221D327DC1FEF000E5A60 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		D36D6964281287D500FFEF91 /* PasswordCriteriaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCriteriaView.swift; sourceTree = "<group>"; };
+		D36D6966281292A000FFEF91 /* PasswordStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStatusView.swift; sourceTree = "<group>"; };
 		D3A221C727DC1FEE000E5A60 /* Password Reset Bankey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Password Reset Bankey.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3A221CA27DC1FEE000E5A60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3A221CE27DC1FEE000E5A60 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +43,7 @@
 			isa = PBXGroup;
 			children = (
 				D36D6964281287D500FFEF91 /* PasswordCriteriaView.swift */,
+				D36D6966281292A000FFEF91 /* PasswordStatusView.swift */,
 			);
 			name = PasswordStatusView;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 				D3A221CF27DC1FEE000E5A60 /* ViewController.swift in Sources */,
 				D3CA3FA027DC267400649206 /* PasswordTextField.swift in Sources */,
 				D36D6965281287D500FFEF91 /* PasswordCriteriaView.swift in Sources */,
+				D36D6967281292A000FFEF91 /* PasswordStatusView.swift in Sources */,
 				D3A221CB27DC1FEE000E5A60 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

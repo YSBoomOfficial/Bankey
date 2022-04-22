@@ -11,8 +11,9 @@ class ViewController: UIViewController {
 	let stackView = UIStackView()
 
 	let newPasswordTextField = PasswordTextField(placeholderText: "New password")
-	let passwordCriteriaView = PasswordCriteriaView(text: "uppercase letter (A-Z)")
+	let statusView = PasswordStatusView()
 	let reenterPasswordTextField = PasswordTextField(placeholderText: "Re-enter new password")
+	let resetButton = UIButton(type: .system)
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -23,19 +24,29 @@ class ViewController: UIViewController {
 
 extension ViewController {
 	func style() {
-		newPasswordTextField.translatesAutoresizingMaskIntoConstraints = false
-		passwordCriteriaView.translatesAutoresizingMaskIntoConstraints = false
-		reenterPasswordTextField.translatesAutoresizingMaskIntoConstraints = false
-
 		stackView.translatesAutoresizingMaskIntoConstraints = false
 		stackView.axis = .vertical
 		stackView.spacing = 20
+
+		newPasswordTextField.translatesAutoresizingMaskIntoConstraints = false
+
+		statusView.translatesAutoresizingMaskIntoConstraints = false
+		statusView.layer.cornerRadius = 5
+		statusView.clipsToBounds = true
+
+		reenterPasswordTextField.translatesAutoresizingMaskIntoConstraints = false
+
+		resetButton.translatesAutoresizingMaskIntoConstraints = false
+		resetButton.configuration = .filled()
+		resetButton.setTitle("Reset password", for: [])
+		resetButton.addTarget(self, action: #selector(resetPasswordButtonTapped), for: .primaryActionTriggered)
+
 	}
 
 	func layout() {
-//		stackView.addArrangedSubview(newPasswordTextField)
-		stackView.addArrangedSubview(passwordCriteriaView)
-//		stackView.addArrangedSubview(reenterPasswordTextField)
+		stackView.addArrangedSubview(newPasswordTextField)
+		stackView.addArrangedSubview(statusView)
+		stackView.addArrangedSubview(reenterPasswordTextField)
 
 		view.addSubview(stackView)
 
@@ -44,6 +55,10 @@ extension ViewController {
 			stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
 			view.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 2),
 		])
+	}
+
+	@objc func resetPasswordButtonTapped(sender: UIButton) {
+
 	}
 }
 
