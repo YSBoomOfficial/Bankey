@@ -11,7 +11,7 @@ class ViewController: UIViewController {
 	let stackView = UIStackView()
 
 	let newPasswordTextField = PasswordTextField(placeholderText: "New password")
-//	let passwordCriteriaView = PasswordCriteriaView()
+	let passwordCriteriaView = PasswordCriteriaView(text: "uppercase letter (A-Z)")
 	let reenterPasswordTextField = PasswordTextField(placeholderText: "Re-enter new password")
 
 	override func viewDidLoad() {
@@ -24,6 +24,8 @@ class ViewController: UIViewController {
 extension ViewController {
 	func style() {
 		newPasswordTextField.translatesAutoresizingMaskIntoConstraints = false
+		passwordCriteriaView.translatesAutoresizingMaskIntoConstraints = false
+		reenterPasswordTextField.translatesAutoresizingMaskIntoConstraints = false
 
 		stackView.translatesAutoresizingMaskIntoConstraints = false
 		stackView.axis = .vertical
@@ -31,9 +33,9 @@ extension ViewController {
 	}
 
 	func layout() {
-		stackView.addArrangedSubview(newPasswordTextField)
-//		stackView.addArrangedSubview(passwordCriteriaView)
-		stackView.addArrangedSubview(reenterPasswordTextField)
+//		stackView.addArrangedSubview(newPasswordTextField)
+		stackView.addArrangedSubview(passwordCriteriaView)
+//		stackView.addArrangedSubview(reenterPasswordTextField)
 
 		view.addSubview(stackView)
 

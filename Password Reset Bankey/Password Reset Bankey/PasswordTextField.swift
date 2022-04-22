@@ -8,7 +8,6 @@
 import UIKit
 
 class PasswordTextField: UIView {
-
 	let lockImageView = UIImageView(image: UIImage(systemName: "lock.fill"))
 	let textField = UITextField()
 	let eyeButton = UIButton(type: .custom)
