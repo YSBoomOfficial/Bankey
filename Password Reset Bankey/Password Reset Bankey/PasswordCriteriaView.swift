@@ -9,7 +9,6 @@ import UIKit
 
 class PasswordCriteriaView: UIView {
 	let stackView = UIStackView()
-
 	let imageView = UIImageView()
 	let label = UILabel()
 
@@ -27,9 +26,13 @@ class PasswordCriteriaView: UIView {
 		}
 	}
 
+	func reset() {
+		isCriteriaMet = false
+		imageView.image = circleImage
+	}
+
 	init(text: String) {
 		super.init(frame: .zero)
-
 		label.text = text
 
 		style()
@@ -37,22 +40,18 @@ class PasswordCriteriaView: UIView {
 	}
 
 	required init?(coder: NSCoder) {
-		fatalError("init?(coder: NSCoder) has not been implemented")
+		fatalError("init(coder:) has not been implemented")
 	}
 
 	override var intrinsicContentSize: CGSize {
 		return CGSize(width: 200, height: 40)
-	}
-
-	func reset() {
-		isCriteriaMet = false
-		imageView.image = circleImage
 	}
 }
 
 extension PasswordCriteriaView {
 	func style() {
 		translatesAutoresizingMaskIntoConstraints = false
+
 		stackView.translatesAutoresizingMaskIntoConstraints = false
 		stackView.spacing = 8
 
@@ -67,20 +66,24 @@ extension PasswordCriteriaView {
 	func layout() {
 		stackView.addArrangedSubview(imageView)
 		stackView.addArrangedSubview(label)
-		
+
 		addSubview(stackView)
 
-		imageView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
-		label.setContentHuggingPriority(.defaultLow, for: .horizontal)
-
+		// Stack
 		NSLayoutConstraint.activate([
-			// StackView
 			stackView.topAnchor.constraint(equalTo: topAnchor),
 			stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
 			stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-			stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
-			// ImageView
+			stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
+		])
+
+		// Image
+		NSLayoutConstraint.activate([
 			imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor)
 		])
+
+		// CHCR
+		imageView.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: .horizontal)
+		label.setContentHuggingPriority(UILayoutPriority.defaultLow, for: .horizontal)
 	}
 }
