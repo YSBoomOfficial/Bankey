@@ -10,6 +10,9 @@
 		D36D6965281287D500FFEF91 /* PasswordCriteriaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36D6964281287D500FFEF91 /* PasswordCriteriaView.swift */; };
 		D36D6967281292A000FFEF91 /* PasswordStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36D6966281292A000FFEF91 /* PasswordStatusView.swift */; };
 		D388A5FC282C7166007FD6B3 /* UIResponder+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D388A5FB282C7166007FD6B3 /* UIResponder+Utils.swift */; };
+		D388A60B282C7541007FD6B3 /* PasswordCriteriaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D388A60A282C7541007FD6B3 /* PasswordCriteriaTests.swift */; };
+		D388A60D282C765B007FD6B3 /* PasswordStatusViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D388A60C282C765B007FD6B3 /* PasswordStatusViewTests.swift */; };
+		D388A60F282C7721007FD6B3 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D388A60E282C7721007FD6B3 /* ViewControllerTests.swift */; };
 		D3A221CB27DC1FEE000E5A60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A221CA27DC1FEE000E5A60 /* AppDelegate.swift */; };
 		D3A221CF27DC1FEE000E5A60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A221CE27DC1FEE000E5A60 /* ViewController.swift */; };
 		D3A221D427DC1FEF000E5A60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3A221D327DC1FEF000E5A60 /* Assets.xcassets */; };
@@ -18,10 +21,24 @@
 		D3CA3FA027DC267400649206 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA3F9F27DC267400649206 /* PasswordTextField.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D388A605282C7504007FD6B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3A221BF27DC1FEE000E5A60 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3A221C627DC1FEE000E5A60;
+			remoteInfo = "Password Reset Bankey";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		D36D6964281287D500FFEF91 /* PasswordCriteriaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCriteriaView.swift; sourceTree = "<group>"; };
 		D36D6966281292A000FFEF91 /* PasswordStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStatusView.swift; sourceTree = "<group>"; };
 		D388A5FB282C7166007FD6B3 /* UIResponder+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+Utils.swift"; sourceTree = "<group>"; };
+		D388A601282C7504007FD6B3 /* Password Reset BankeyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Password Reset BankeyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D388A60A282C7541007FD6B3 /* PasswordCriteriaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCriteriaTests.swift; sourceTree = "<group>"; };
+		D388A60C282C765B007FD6B3 /* PasswordStatusViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStatusViewTests.swift; sourceTree = "<group>"; };
+		D388A60E282C7721007FD6B3 /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
 		D3A221C727DC1FEE000E5A60 /* Password Reset Bankey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Password Reset Bankey.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3A221CA27DC1FEE000E5A60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3A221CE27DC1FEE000E5A60 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,6 +50,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D388A5FE282C7504007FD6B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D3A221C427DC1FEE000E5A60 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -53,10 +77,21 @@
 			name = PasswordStatusView;
 			sourceTree = "<group>";
 		};
+		D388A602282C7504007FD6B3 /* Password Reset BankeyTests */ = {
+			isa = PBXGroup;
+			children = (
+				D388A60A282C7541007FD6B3 /* PasswordCriteriaTests.swift */,
+				D388A60C282C765B007FD6B3 /* PasswordStatusViewTests.swift */,
+				D388A60E282C7721007FD6B3 /* ViewControllerTests.swift */,
+			);
+			path = "Password Reset BankeyTests";
+			sourceTree = "<group>";
+		};
 		D3A221BE27DC1FEE000E5A60 = {
 			isa = PBXGroup;
 			children = (
 				D3A221C927DC1FEE000E5A60 /* Password Reset Bankey */,
+				D388A602282C7504007FD6B3 /* Password Reset BankeyTests */,
 				D3A221C827DC1FEE000E5A60 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				D3A221C727DC1FEE000E5A60 /* Password Reset Bankey.app */,
+				D388A601282C7504007FD6B3 /* Password Reset BankeyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -75,8 +111,8 @@
 				D3A221CA27DC1FEE000E5A60 /* AppDelegate.swift */,
 				D3A221CE27DC1FEE000E5A60 /* ViewController.swift */,
 				D3CA3F9F27DC267400649206 /* PasswordTextField.swift */,
-				D388A5FB282C7166007FD6B3 /* UIResponder+Utils.swift */,
 				D36D6963281287BB00FFEF91 /* PasswordStatusView */,
+				D388A5FB282C7166007FD6B3 /* UIResponder+Utils.swift */,
 				D3A221DE27DC20AF000E5A60 /* Files */,
 			);
 			path = "Password Reset Bankey";
@@ -95,6 +131,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D388A600282C7504007FD6B3 /* Password Reset BankeyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D388A607282C7504007FD6B3 /* Build configuration list for PBXNativeTarget "Password Reset BankeyTests" */;
+			buildPhases = (
+				D388A5FD282C7504007FD6B3 /* Sources */,
+				D388A5FE282C7504007FD6B3 /* Frameworks */,
+				D388A5FF282C7504007FD6B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D388A606282C7504007FD6B3 /* PBXTargetDependency */,
+			);
+			name = "Password Reset BankeyTests";
+			productName = "Password Reset BankeyTests";
+			productReference = D388A601282C7504007FD6B3 /* Password Reset BankeyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D3A221C627DC1FEE000E5A60 /* Password Reset Bankey */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3A221DB27DC1FEF000E5A60 /* Build configuration list for PBXNativeTarget "Password Reset Bankey" */;
@@ -119,9 +173,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
+				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					D388A600282C7504007FD6B3 = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = D3A221C627DC1FEE000E5A60;
+					};
 					D3A221C627DC1FEE000E5A60 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -141,11 +199,19 @@
 			projectRoot = "";
 			targets = (
 				D3A221C627DC1FEE000E5A60 /* Password Reset Bankey */,
+				D388A600282C7504007FD6B3 /* Password Reset BankeyTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D388A5FF282C7504007FD6B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D3A221C527DC1FEE000E5A60 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -158,6 +224,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D388A5FD282C7504007FD6B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D388A60F282C7721007FD6B3 /* ViewControllerTests.swift in Sources */,
+				D388A60B282C7541007FD6B3 /* PasswordCriteriaTests.swift in Sources */,
+				D388A60D282C765B007FD6B3 /* PasswordStatusViewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D3A221C327DC1FEE000E5A60 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -174,6 +250,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D388A606282C7504007FD6B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3A221C627DC1FEE000E5A60 /* Password Reset Bankey */;
+			targetProxy = D388A605282C7504007FD6B3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		D3A221D527DC1FEF000E5A60 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -186,6 +270,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D388A608282C7504007FD6B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HB73YMFXYF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.shah.yash.Password-Reset-BankeyTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Password Reset Bankey.app/Password Reset Bankey";
+			};
+			name = Debug;
+		};
+		D388A609282C7504007FD6B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HB73YMFXYF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.shah.yash.Password-Reset-BankeyTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Password Reset Bankey.app/Password Reset Bankey";
+			};
+			name = Release;
+		};
 		D3A221D927DC1FEF000E5A60 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -363,6 +485,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D388A607282C7504007FD6B3 /* Build configuration list for PBXNativeTarget "Password Reset BankeyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D388A608282C7504007FD6B3 /* Debug */,
+				D388A609282C7504007FD6B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D3A221C227DC1FEE000E5A60 /* Build configuration list for PBXProject "Password Reset Bankey" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
