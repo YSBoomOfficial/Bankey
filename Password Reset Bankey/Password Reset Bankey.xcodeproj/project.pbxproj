@@ -13,6 +13,7 @@
 		D3A221CF27DC1FEE000E5A60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A221CE27DC1FEE000E5A60 /* ViewController.swift */; };
 		D3A221D427DC1FEF000E5A60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3A221D327DC1FEF000E5A60 /* Assets.xcassets */; };
 		D3A221D727DC1FEF000E5A60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3A221D527DC1FEF000E5A60 /* LaunchScreen.storyboard */; };
+		D3A35F96282C5D0000B97020 /* PasswordCritiera.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A35F95282C5D0000B97020 /* PasswordCritiera.swift */; };
 		D3CA3FA027DC267400649206 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA3F9F27DC267400649206 /* PasswordTextField.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		D3A221D327DC1FEF000E5A60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3A221D627DC1FEF000E5A60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3A221D827DC1FEF000E5A60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3A35F95282C5D0000B97020 /* PasswordCritiera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCritiera.swift; sourceTree = "<group>"; };
 		D3CA3F9F27DC267400649206 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -42,6 +44,7 @@
 		D36D6963281287BB00FFEF91 /* PasswordStatusView */ = {
 			isa = PBXGroup;
 			children = (
+				D3A35F95282C5D0000B97020 /* PasswordCritiera.swift */,
 				D36D6964281287D500FFEF91 /* PasswordCriteriaView.swift */,
 				D36D6966281292A000FFEF91 /* PasswordStatusView.swift */,
 			);
@@ -157,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3A221CF27DC1FEE000E5A60 /* ViewController.swift in Sources */,
+				D3A35F96282C5D0000B97020 /* PasswordCritiera.swift in Sources */,
 				D3CA3FA027DC267400649206 /* PasswordTextField.swift in Sources */,
 				D36D6965281287D500FFEF91 /* PasswordCriteriaView.swift in Sources */,
 				D36D6967281292A000FFEF91 /* PasswordStatusView.swift in Sources */,
