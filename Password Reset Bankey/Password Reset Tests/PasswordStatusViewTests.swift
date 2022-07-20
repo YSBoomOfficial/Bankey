@@ -7,7 +7,7 @@
 
 import XCTest
 
-@testable import Password_Reset_Bankey
+@testable import Bankey
 
 class PasswordStatusViewTests_ShowCheckmarkOrReset_When_Validation_Is_Inline: XCTestCase {
 

@@ -7,16 +7,16 @@
 
 import XCTest
 
-@testable import Password_Reset_Bankey
+@testable import Bankey
 
 class ViewControllerTests_NewPassword_Validation: XCTestCase {
-	var vc: ViewController!
+	var vc: PasswordResetViewController!
 	let validPassword = "12345678Aa!"
 	let tooShort = "1234Aa!"
 
 	override func setUp() {
 		super.setUp()
-		vc = ViewController()
+		vc = PasswordResetViewController()
 	}
 
 	func testEmptyPassword() throws {
@@ -60,13 +60,13 @@ class ViewControllerTests_NewPassword_Validation: XCTestCase {
 }
 
 class ViewControllerTests_Show_Alert: XCTestCase {
-	var vc: ViewController!
+	var vc: PasswordResetViewController!
 	let validPassword = "12345678Aa!"
 	let tooShort = "1234Aa!"
 
 	override func setUp() {
 		super.setUp()
-		vc = ViewController()
+		vc = PasswordResetViewController()
 	}
 
 	func testShowSuccess() throws {

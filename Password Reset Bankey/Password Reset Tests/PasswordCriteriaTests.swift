@@ -7,7 +7,7 @@
 
 import XCTest
 
-@testable import Password_Reset_Bankey
+@testable import Bankey
 
 class PasswordLengthCriteriaTests: XCTestCase {
 	func testLong() throws {

@@ -168,6 +168,7 @@ extension LoginViewController {
 
 	@objc func passwordResetTapped(_ sender: UIButton) {
 		print("passwordResetTapped")
+		present(PasswordResetViewController(), animated: true)
 	}
 
 	private func login() {

@@ -26,7 +26,7 @@ class CurrencyFormatterTests: XCTestCase {
 
 	func testCurrencyFormatted() throws {
 		let pounds = formatter.currencyFormatted(929466)
-		XCTAssertEqual(pounds, "\(Locale.current.currencySymbol!) 929,466.00")
+		XCTAssertEqual(pounds, "\(Locale.current.currencySymbol!)929,466.00")
 	}
 
 	func testZeroCurrencyFormatted() throws {

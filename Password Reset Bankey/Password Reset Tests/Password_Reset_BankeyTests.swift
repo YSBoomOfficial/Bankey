@@ -7,7 +7,7 @@
 
 import XCTest
 
-@testable import Password_Reset_Bankey
+@testable import Bankey
 
 class Password_Reset_BankeyTests: XCTestCase {
 

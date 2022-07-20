@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  PasswordResetViewController.swift
 //  Password Reset Bankey
 //
 //  Created by Yash Shah on 12/03/2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class PasswordResetViewController: UIViewController {
 	let stackView = UIStackView()
 	let newPasswordTextField = PasswordTextField(placeHolderText: "New password")
 	let statusView = PasswordStatusView()
@@ -25,7 +25,7 @@ class ViewController: UIViewController {
 	}
 }
 
-extension ViewController {
+extension PasswordResetViewController {
 	private func setup() {
 		setupNewPassword()
 		setupConfirmPassword()
@@ -96,6 +96,8 @@ extension ViewController {
 	}
 
 	func style() {
+		view.backgroundColor = .systemBackground
+
 		stackView.translatesAutoresizingMaskIntoConstraints = false
 		stackView.axis = .vertical
 		stackView.spacing = 20
@@ -132,7 +134,7 @@ extension ViewController {
 }
 
 // MARK: PasswordTextFieldDelegate
-extension ViewController: PasswordTextFieldDelegate {
+extension PasswordResetViewController: PasswordTextFieldDelegate {
 	func editingChanged(_ sender: PasswordTextField) {
 		if sender === newPasswordTextField {
 			statusView.updateDisplay(sender.textField.text ?? "")
@@ -150,7 +152,7 @@ extension ViewController: PasswordTextFieldDelegate {
 }
 
 // MARK: Keyboard
-extension ViewController {
+extension PasswordResetViewController {
 	@objc func keyboardWillShow(sender: NSNotification) {
 		guard let keyboardFrame = sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue,
 			  let currentTextField = UIResponder.currentFirst() as? UITextField else { return }
@@ -172,7 +174,7 @@ extension ViewController {
 }
 
 // MARK: - Actions
-extension ViewController {
+extension PasswordResetViewController {
 	@objc func resetPasswordButtonTapped(sender: UIButton) {
 		view.endEditing(true)
 
@@ -196,14 +198,14 @@ extension ViewController {
 }
 
 // MARK: Tests
-extension ViewController {
+extension PasswordResetViewController {
 	var newPasswordText: String? {
 		get { newPasswordTextField.text }
-		set { newPasswordTextField.text = newValue}
+		set { newPasswordTextField.text = newValue }
 	}
 
 	var confirmPasswordText: String? {
 		get { confirmPasswordTextField.text }
-		set { confirmPasswordTextField.text = newValue}
+		set { confirmPasswordTextField.text = newValue }
 	}
 }
