@@ -235,10 +235,10 @@
 			children = (
 				D3B698C52786996F000E664D /* AppDelegate.swift */,
 				D3E6F444278F2E35000376B2 /* MainViewController.swift */,
-				D3A704EE27869EA400531117 /* Login */,
-				D39309BD278B66C7009A499A /* Onboarding */,
-				D337A1AF278F3E92007405C1 /* Account Summary */,
 				D3856CD3278DF83300204F14 /* Utils */,
+				D39309BD278B66C7009A499A /* Onboarding */,
+				D3A704EE27869EA400531117 /* Login */,
+				D337A1AF278F3E92007405C1 /* Account Summary */,
 				D3B0847027933DB40018EEB1 /* Components */,
 				D3A704ED27869E3500531117 /* Files */,
 			);

@@ -9,7 +9,9 @@ import UIKit
 
 extension UIViewController {
 	func setStatusBar() {
-		let statusBarSize: CGSize = UIApplication.shared.statusBarFrame.size
+		let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene
+		guard let statusBarSize = scene?.statusBarManager?.statusBarFrame.size else { fatalError("setStatusBar failed") }
+
 		let frame = CGRect(origin: .zero, size: statusBarSize)
 		let statusBarView = UIView(frame: frame)
 
