@@ -18,6 +18,8 @@ class LoginViewController: UIViewController {
 	let loginView = LoginView()
 	let signInButton = UIButton(type: .system)
 
+	let passwordResetButton = UIButton(type: .system)
+
 	let errorMessageLabel = UILabel()
 
 	weak var delegate: LoginViewControllerDelegate?
@@ -82,6 +84,13 @@ extension LoginViewController {
 		signInButton.setTitle("Sign in", for: [])
 		signInButton.addTarget(self, action: #selector(signInTapped), for: .primaryActionTriggered)
 
+		// passwordResetButton style
+		passwordResetButton.translatesAutoresizingMaskIntoConstraints = false
+		passwordResetButton.configuration = .plain()
+		passwordResetButton.configuration?.imagePadding = 8
+		passwordResetButton.setTitle("Forgot Password?", for: [])
+		passwordResetButton.addTarget(self, action: #selector(passwordResetTapped), for: .primaryActionTriggered)
+
 		// errorMessageLabel style
 		errorMessageLabel.translatesAutoresizingMaskIntoConstraints = false
 		errorMessageLabel.textAlignment = .center
@@ -95,6 +104,7 @@ extension LoginViewController {
 		view.addSubview(subtitleLabel)
 		view.addSubview(loginView)
 		view.addSubview(signInButton)
+		view.addSubview(passwordResetButton)
 		view.addSubview(errorMessageLabel)
 
 		/* multiplier of 1 = 8pts*/
@@ -131,12 +141,21 @@ extension LoginViewController {
 			signInButton.trailingAnchor.constraint(equalTo: loginView.trailingAnchor)
 		])
 
+		// passwordResetButton constraints
+		NSLayoutConstraint.activate([
+			passwordResetButton.topAnchor.constraint(equalToSystemSpacingBelow: signInButton.bottomAnchor, multiplier: 2),
+			passwordResetButton.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
+			passwordResetButton.trailingAnchor.constraint(equalTo: loginView.trailingAnchor)
+		])
+
 		// errorMessageLabel constraints
 		NSLayoutConstraint.activate([
-			errorMessageLabel.topAnchor.constraint(equalToSystemSpacingBelow: signInButton.bottomAnchor, multiplier: 2),
+			errorMessageLabel.topAnchor.constraint(equalToSystemSpacingBelow: passwordResetButton.bottomAnchor, multiplier: 2),
 			errorMessageLabel.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
 			errorMessageLabel.trailingAnchor.constraint(equalTo: loginView.trailingAnchor)
 		])
+
+
 
 	}
 }
@@ -145,6 +164,10 @@ extension LoginViewController {
 	@objc func signInTapped(_ sender: UIButton) {
 		errorMessageLabel.isHidden = true
 		login()
+	}
+
+	@objc func passwordResetTapped(_ sender: UIButton) {
+		print("passwordResetTapped")
 	}
 
 	private func login() {

@@ -108,7 +108,9 @@ extension AccountSummaryViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 extension AccountSummaryViewController: UITableViewDelegate {
-	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {}
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		tableView.deselectRow(at: indexPath, animated: true)
+	}
 }
 
 // MARK: - Networking
